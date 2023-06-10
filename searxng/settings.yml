@@ -1,0 +1,34 @@
+# see https://docs.searxng.org/admin/engines/settings.html#use-default-settings
+use_default_settings: true
+server:
+  base_url: https://localhost
+  limiter: false 
+  image_proxy: true
+ui:
+  static_use_hash: true
+  results_on_new_tab: true
+redis:
+  url: redis://redis:6379/0
+search:
+  default_lang: "en"
+general:
+  instance_name: "JackyXNG"
+  enable_metrics: false
+enabled_plugins:
+  - 'Hash plugin'
+  - 'Search on category select'
+  - 'Tracker URL remover'
+  - 'Ahmia blacklist'
+  - 'Hostname replace'
+  - 'Open Access DOI rewrite'
+  - 'Vim-like hotkeys'
+  - 'Tor check plugin'
+
+hostname_replace:
+  '(.*\.)?youtube\.com$': 'invidious.fdn.fr'
+  '(.*\.)?youtu\.be$': 'invidious.fdn.fr'
+  '(.*\.)?youtube-noocookie\.com$': 'yotter.example.com'
+  '(.*\.)?reddit\.com$': 'libreddit.privacy.com.de'
+  '(.*\.)?redd\.it$': 'libreddit.privacy.com.de'
+  '(www\.)?twitter\.com$': 'nitter.lacontrevoie.fr'
+  'spam\.example\.com': false

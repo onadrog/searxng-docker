@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+workdir=/absolute/path/to/this/dir/ # CHANGE THIS
+
+systemctl stop searxng-docker.service
+docker compose -f $workdir/docker-compose.yaml pull
+systemctl daemon-reload
+systemctl start searxng-docker.service
